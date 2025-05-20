@@ -7,7 +7,7 @@ $nomebd = 'bd_biblioteca_agendamento';
 $conexao = new mysqli($host, $usuariobd, $senhabd, $nomebd);
 
 if ($conexao->connect_error){
-    echo "erro ao conectar ".$conexao-.connect_error;
+    echo "erro ao conectar ".$conexao->connect_error;
 } else{
     echo "conexão sucedida!";
 }

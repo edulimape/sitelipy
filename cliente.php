@@ -8,12 +8,13 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
     $NomeCLI = $_POST['nome'];
     $CpfCLI = $_POST['cpf'];
     $TelefoneCLI = $_POST['telefone'];
+    $EnderecoCLI = $_POST['endereco'];
 
-    $execute_sql = "call cad_login(?, ?, ?, ?, ?)";
+    $execute_sql = "call cad_login(?, ?, ?, ?, ?, ?)";
 
     if ($stmt = $conexao->prepare($execute_sql)){
-        $stmt->bind_param("sssss", $UsuarioCLI, $SenhaCLI, 
-                            $NomeCLI, $CpfCLI, $TelefoneCLI);
+        $stmt->bind_param("ssssss", $UsuarioCLI, $SenhaCLI, $NomeCLI, 
+                                    $CpfCLI, $TelefoneCLI, $EnderecoCLI);
         $stmt->execute();
         echo "cadastrado com sucesso!";
     } else {

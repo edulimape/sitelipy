@@ -1,0 +1,34 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Domingues - Aluguel de Livros</title>
+  <link rel="stylesheet" href="aluguel.css">
+</head>
+<body>
+  <div class="aluguel-container">
+    <h1>Agendar Aluguel de Livro</h1>
+    <form action="./php/aluguel.php" method="post">
+
+      <label for="data">Data de Retirada:</label>
+      <input type="date" id="data" name="datret" required>
+
+      <label for="devolucao">Data de Devolução:</label>
+      <input type="date" id="devolucao" name="datdev" required>
+
+      <label for="cpf">CPF:</label>
+      <input type="text" id="cpf" name="cpf" required>
+
+      <label for="livro">Escolha o Livro:</label>
+      <select id="livro" name="aluguel" required>
+        <option value="">Selecione...</option>
+        <option value="001">1984 - George Orwell</option>
+        <option value="002">Dom Casmurro - Machado de Assis</option>
+        <option value="003">O Pequeno Príncipe - Antoine de Saint-Exupéry</option>
+      </select>
+
+      <button type="submit">Confirmar Aluguel</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -3,17 +3,15 @@
 include 'conexao.php';
 
 if($_SERVER["REQUEST_METHOD"]== "POST"){
-    $UsuarioCLI = $_POST['usuario'];
-    $SenhaCLI = $_POST['senha'];
-    $NomeCLI = $_POST['nome'];
-    $CpfCLI = $_POST['cpf'];
-    $TelefoneCLI = $_POST['telefone'];
+    $DATAlu = $_POST['datret'];
+    $DATDev = $_POST['datdev'];
+    $CPFcli = $_POST['cpf'];
+    $LIVEsc = $_POST['aluguel'];
 
-    $execute_sql = "call cad_login(?, ?, ?, ?, ?)";
+    $execute_sql = "call cad_aluguel(?, ?, ?, ?)";
 
     if ($stmt = $conexao->prepare($execute_sql)){
-        $stmt->bind_param("sssss", $UsuarioCLI, $SenhaCLI, 
-                            $NomeCLI, $CpfCLI, $TelefoneCLI);
+        $stmt->bind_param("ssss", $DATAlu, $DATDev, $CPFcli, $LIVEsc);
         $stmt->execute();
         echo "cadastrado com sucesso!";
     } else {
