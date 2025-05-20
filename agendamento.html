@@ -1,0 +1,30 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamento - Jatos Lavados</title>
+  <link rel="stylesheet" href="agendamento.css">
+</head>
+<body>
+  <div class="agendamento-container">
+    <h1>Agendar Lavagem</h1>
+    <form>
+      <label for="tipo">Tipo de Lavagem:</label>
+      <select id="tipo" required>
+        <option value="">Selecione...</option>
+        <option value="simples">Simples - R$25,00</option>
+        <option value="completa">Completa - R$50,00</option>
+        <option value="premium">Premium - R$75,00</option>
+      </select>
+
+      <label for="data">Data:</label>
+      <input type="date" id="data" required>
+
+      <label for="hora">Hora:</label>
+      <input type="time" id="hora" required>
+
+      <button type="submit">Agendar</button>
+    </form>
+  </div>
+</body>
+</html>
